@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Landing Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+
+        .service, .portfolio-item {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service:hover, .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service h3, .portfolio-item h3 {
+            margin-top: 0;
+        }
+
+        .cta-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form label {
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"], form input[type="email"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Hello all....I'm Gurram Vishala</h1>
+        <h1>Welcome to my Landing page of Technoleads company</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main Content Section -->
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a leading company in the tech industry, committed to providing top-notch services and innovative solutions to our clients. Our team of experts works tirelessly to ensure customer satisfaction and continuous improvement.</p>
+            <p>Founded in 2024, we have grown into a dynamic organization with a global presence. Our mission is to deliver cutting-edge technology solutions that empower businesses to achieve their goals.</p>
+        </section>
+        
+        <section id="services">
+            <h2>Services</h2>
+            <div class="service">
+                <h3>Web Development</h3>
+                <p>We create responsive and user-friendly websites tailored to your business needs. Our expertise in HTML, CSS, JavaScript, and various frameworks ensures a robust online presence for your brand.</p>
+                <div class="cta-buttons">
+                    <a href="#">Learn More</a>
+                    <a href="#">Get Started</a>
+                </div>
+            </div>
+            <div class="service">
+                <h3>Mobile App Development</h3>
+                <p>Our team develops high-performance mobile applications for both Android and iOS platforms. We focus on delivering a seamless user experience with cutting-edge features.</p>
+                <div class="cta-buttons">
+                    <a href="#">Learn More</a>
+                    <a href="#">Get Started</a>
+                </div>
+            </div>
+            <div class="service">
+                <h3>Digital Marketing</h3>
+                <p>Enhance your online presence with our comprehensive digital marketing services, including SEO, social media marketing, and PPC campaigns. We help you reach your target audience effectively.</p>
+                <div class="cta-buttons">
+                    <a href="#">Learn More</a>
+                    <a href="#">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-item">
+                <h3>Weather Application Website</h3>
+                <p>A weather application website provides real-time weather information for different locations. Users can enter a location name to receive current weather conditions, including temperature, humidity, wind speed, and a brief description. The site fetches data from a weather API, ensuring accurate and up-to-date information. This application helps users stay informed about weather changes, enhancing their ability to plan daily activities. It's designed with HTML, CSS, and JavaScript for a user-friendly and visually appealing experience.</p>
+                <div class="cta-buttons">
+                    <a href="#">View Details</a>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <h3>Temperature coversion app</h3>
+                <p>A temperature conversion app allows users to easily convert temperatures between Kelvin (K), Celsius (C), and Fahrenheit (F). It provides a user-friendly interface, ideal for children, to input a temperature in any unit and see the converted values instantly. The app also displays the formulas for each conversion, aiding in educational purposes. Built using HTML, CSS, and JavaScript, it ensures an engaging and interactive experience. This tool is perfect for homework help and enhancing children's understanding of temperature units and conversions.</p>
+                <div class="cta-buttons">
+                    <a href="#">View Details</a>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <h3>Social Media Campaign Blog</h3>
+                <p>A social media campaign blog website shares insights and strategies about running effective social media campaigns. It showcases successful campaigns, such as one that increased brand awareness and engagement through targeted ads and creative content. The blog offers tips on audience targeting, content creation, and analytics. It aims to educate and inspire marketers to leverage social media for brand growth. The website is an invaluable resource for staying updated on the latest trends and best practices in social media marketing.</p>
+                <div class="cta-buttons">
+                    <a href="#">View Details</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <p>"This company transformed our online presence and boosted our sales. Highly recommend their services!" - Akshay, CEO of Tech Innovatex</p>
+            <p>"Their team is incredibly professional and delivered our project on time with exceptional quality. We couldn't be happier!" - Varudini, Founder of startup innovating Hub</p>
+             <p>"This is the best service ever!" - Happy Customer</p>
+            <p>"I love using this product!" - Satisfied User</p>       
+ </section>
+        
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+    
+    </body>
+</html>
