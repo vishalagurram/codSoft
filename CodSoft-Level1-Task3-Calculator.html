@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1e2a38; /* Dark background color for the page */
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #2c3e50; /* Dark blue-gray background color for the calculator */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #display {
+            background-color: #f9f9f9; /* Light background color for the display */
+            color: #333; /* Dark text color for the display */
+            font-size: 2em;
+            text-align: right;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 3px solid #f4a261; /* Light cream border for display */
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .button {
+            padding: 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffffff; /* White background color for buttons */
+            color: #333; /* Dark text color for buttons */
+            cursor: pointer;
+            border: 3px solid #f4a261; /* Light cream border for buttons */
+        }
+
+        .button:hover {
+            background-color: #f0f0f0; /* Light gray hover color for buttons */
+        }
+
+        #clear {
+            grid-column: span 4;
+            background-color: #c0392b; /* Dark red background color for the clear button */
+            color: #fff;
+        }
+
+        #clear:hover {
+            background-color: #e74c3c; /* Lighter red hover color for the clear button */
+        }
+
+        #sqrt {
+            background-color: #27ae60; /* Green background color for the square root button */
+            color: #fff; /* White text color for the square root button */
+        }
+
+        #sqrt:hover {
+            background-color: #2ecc71; /* Lighter green hover color for the square root button */
+        }
+
+        #percent {
+            background-color: #f4a261; /* Light orange background color for the percentage button */
+            color: #fff; /* White text color for the percentage button */
+        }
+
+        #percent:hover {
+            background-color: #f1c40f; /* Lighter orange hover color for the percentage button */
+        }
+
+        #divide {
+            background-color: #ffffff; /* White background color for the division button */
+            color: #333; /* Dark text color for the division button */
+        }
+
+        #divide:hover {
+            background-color: #f0f0f0; /* Light gray hover color for the division button */
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div id="display">0</div>
+        <div class="buttons">
+            <button class="button" id="clear">Calculator</button>
+            <button class="button" data-value="√" id="sqrt">√</button>
+            <button class="button" data-value="%" id="percent">%</button>
+            <button class="button" data-value=".">.</button>
+
+            <button class="button" data-value="/" id="divide">/</button>
+            <button class="button" data-value="7">7</button>
+            <button class="button" data-value="8">8</button>
+            <button class="button" data-value="9">9</button>
+
+            <button class="button" data-value="*">*</button>
+            <button class="button" data-value="4">4</button>
+            <button class="button" data-value="5">5</button>
+            <button class="button" data-value="6">6</button>
+
+            <button class="button" data-value="-">-</button>
+            <button class="button" data-value="1">1</button>
+            <button class="button" data-value="2">2</button>
+            <button class="button" data-value="3">3</button>
+
+            <button class="button" data-value="+">+</button>
+            <button class="button" data-value="0">0</button>
+            <button class="button" data-value="=">=</button>
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById('display');
+        const buttons = Array.from(document.getElementsByClassName('button'));
+
+        let currentInput = '';
+        let previousInput = '';
+        let operator = null;
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.getAttribute('data-value') || button.innerText;
+
+                if (value === 'Calculator') {
+                    currentInput = '';
+                    previousInput = '';
+                    operator = null;
+                    display.innerText = '0';
+                } else if (value === '=') {
+                    if (operator && currentInput) {
+                        previousInput = evaluate(previousInput, currentInput, operator);
+                        display.innerText = previousInput;
+                        currentInput = '';
+                        operator = null;
+                    }
+                } else if (['+', '-', '*', '/'].includes(value)) {
+                    if (currentInput) {
+                        if (previousInput) {
+                            previousInput = evaluate(previousInput, currentInput, operator);
+                        } else {
+                            previousInput = currentInput;
+                        }
+                        currentInput = '';
+                        operator = value;
+                        display.innerText = previousInput;
+                    }
+                } else if (value === '√') {
+                    currentInput = Math.sqrt(parseFloat(currentInput)).toString();
+                    display.innerText = currentInput;
+                } else if (value === '%') {
+                    currentInput = (parseFloat(currentInput) / 100).toString();
+                    display.innerText = currentInput;
+                } else {
+                    currentInput += value;
+                    display.innerText = currentInput;
+                }
+            });
+        });
+
+        function evaluate(a, b, operator) {
+            const num1 = parseFloat(a);
+            const num2 = parseFloat(b);
+
+            switch (operator) {
+                case '+':
+                    return (num1 + num2).toString();
+                case '-':
+                    return (num1 - num2).toString();
+                case '*':
+                    return (num1 * num2).toString();
+                case '/':
+                    return (num1 / num2).toString();
+                default:
+                    return '';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
